@@ -1,0 +1,8 @@
+.site-content {
+  padding: 2rem;
+
+  @media screen and (min-width: $query__small) {
+    padding: 4rem;
+  }
+
+}
