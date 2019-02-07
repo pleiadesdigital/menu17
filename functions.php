@@ -9,7 +9,8 @@ if (!function_exists('menu17_setup')) :
 		add_theme_support('post-thumbnails');
 		// REGISTER NAV MENUS
 		register_nav_menus(array(
-			'menu-1' => esc_html__('Primary', 'menu17'),
+			'top' 		=> esc_html__('Top Menu', 'menu17'),
+			'social' 	=> esc_html__('Social Menu Links', 'menu17'),
 		));
 		// VALID HTML5
 		add_theme_support('html5', array(
@@ -96,10 +97,21 @@ require get_template_directory() . '/inc/template-tags.php';
 /* Functions which enhance the theme by hooking into WordPress */
 require get_template_directory() . '/inc/template-functions.php';
 
+// SVG icons functions and filters
+require get_parent_theme_file_path('/inc/icon-functions.php');
+
 /* Customizer additions */
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
 
 /* Load Jetpack compatibility file */
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// JavaScript detection
+function menu17_javascript_detection() {
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action('wp_head', 'menu17_javascript_detection', 0);
+
+

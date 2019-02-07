@@ -1,7 +1,7 @@
 <?php /* SITE HEADER */ ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,15 +30,28 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'menu17'); ?></button>
-			<?php
-			wp_nav_menu(array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			));
-			?>
-		</nav><!-- #site-navigation -->
+		<!-- TEMPLATE PART - NAVIGATION -->
+		<div class="navigation-top">
+			<div class="wrap">
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e('Top Menu', 'menu17'); ?>">
+					<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+						<?php //esc_html_e('MENU', 'menu17'); ?>
+						<?php
+							echo menu17_get_svg(array('icon' => 'bars'));
+							echo menu17_get_svg(array('icon' => 'close'));
+							_e('Menu', 'menu17');
+						?>
+					</button>
+					<?php
+					wp_nav_menu(array(
+						'theme_location' => 'top',
+						'menu_id'        => 'top-menu',
+					));
+					?>
+				</nav><!-- #site-navigation -->
+			</div>
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

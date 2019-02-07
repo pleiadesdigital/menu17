@@ -838,169 +838,77 @@ a:hover, a:active {
 
 @media screen and (min-width: 900px) {
 	.site-header {
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-pack: justify;
-		    justify-content: space-between;
+		/* display: flex;
+    justify-content: space-between; */
+		display: block;
 	}
 	.site-branding {
 		border: 1px solid #2E94B5;
-		width: 35%;
-	}
-	.main-navigation {
-		width: 55%;
 	}
 }
 
 /* Header Menu */
-.main-navigation {
-	display: block;
-	font-family: "Titillium Web";
-	font-weight: 300;
-	clear: left;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0px;
-	padding-top: 2rem;
-	padding-left: 0px;
-}
-
-.main-navigation ul ul {
-	display: none;
-	top: 1.5em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	top: 0;
-}
-
-.main-navigation ul ul li {
-	padding-left: 1em;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
+.navigation-top {
+	background: #FFFFFF;
+	border-top: 1px solid #EEEEEE;
+	font-size: 1.6rem;
 	position: relative;
 }
 
-.main-navigation a {
-	display: inline-block;
-	width: 100%;
-	padding: 0.5em 1em 0.5em 0px;
-	text-decoration: none;
-	color: #FFF4E0;
-	background: #1F2226;
-	border-right: 1px dotted #CCCCCC;
+.navigation-top .wrap {
+	max-width: 1000px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.main-navigation a:hover,
-.main-navigation a:focus {
-	text-decoration: underline;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-	text-decoration: underline;
-	color: #D6231E;
-}
-
-.main-navigation .menu-item-has-children,
-.main-navigation .page-item-has-children {
-	min-width: 218px;
-}
-
-.main-navigation .menu-item-has-children > a,
-.main-navigation .page_item_has_children > a {
-	padding-right: 2em;
-}
-
-button.dropdown-toggle {
-	position: absolute;
-	right: 0;
-	border: none;
-	background-color: #FFF4E0;
-	color: #F8B500;
-	line-height: 1.5em;
-	padding: 0.4em 1em 0.4em 0.5em;
-}
-
-.menu-toggle {
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: block;
-	margin: 1.2em 1.2em 0px 0px;
-	padding: 0.6em 0.8em;
-	font-size: 80%;
-	text-transform: uppercase;
-	color: #F8B500;
-	border: 1px solid #CCCCCC;
-}
-
-.toggled-on ul,
-.sub-menu.toggled-on {
+.navigation-top .wrap:after {
+	clear: both;
+	content: "";
 	display: block;
 }
 
-@media screen and (min-width: 600px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation .menu-item-has-children > a,
-	.main-navigation .page_item_has_children > a {
-		padding-right: 2em;
-		background: #1F2226;
-	}
-	.main-navigation ul {
-		display: block;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
-	}
-	.main-navigation ul ul {
-		-ms-flex-direction: column;
-		    flex-direction: column;
-		background: #1F2226;
-		margin-left: 0px;
-	}
-	.main-navigation ul ul li {
-		padding-left: 0px;
-	}
-	.main-navigation ul ul li a {
-		width: 218px;
-		background: none;
-	}
-	.main-navigation ul li a {
-		padding: 0.4em 1em;
-	}
+.navigation-top a {
+	color: #222222;
+	font-weight: 400;
+	transition: color 0.2s;
 }
 
-@media screen and (min-width: 900px) {
-	.main-navigation ul {
-		-ms-flex-pack: end;
-		    justify-content: flex-end;
-		padding-top: 0px;
-	}
+.navigation-top .current-menu-item > a,
+.navigation-top .current_page_item > a {
+	color: #767676;
+}
+
+.main-navigation ul {
+	background: #FFFFFF;
+	list-style: none;
+	margin: 0px;
+	padding: 0px 1.5em;
+	text-align: left;
+}
+
+.js .main-navigation ul,
+.main-navigation .menu-item-has-children > a > .icon,
+.main-navigation .page_item_has_children > a > .icon,
+.main-navigation ul a > .icon {
+	display: none;
+}
+
+.main-navigation > div > ul {
+	border-top: 1px solid #EEEEEE;
+	padding: 0.75em 1.695em;
+}
+
+.js .main-navigation.toggled-on > div > ul {
+	display: block;
+}
+
+.main-navigation ul ul {
+	padding: 0px 0px 0px 1.5em;
+}
+
+.main-navigation ul ul.toggled-on {
+	display: block;
 }
 
 /*--------------------------------------------------------------

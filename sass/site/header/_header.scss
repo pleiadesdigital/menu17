@@ -48,17 +48,18 @@
 
 @media screen and (min-width: $query__medium) {
   .site-header {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+    display: block;
   }
 
   .site-branding {
     border: 1px solid $color__lightblue;;
-    width: 35%;
+    // width: 35%;
   }
 
   .main-navigation {
-    width: 55%;
+    // width: 55%;
   }
 
 }
