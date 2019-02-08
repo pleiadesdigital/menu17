@@ -63,7 +63,8 @@ function menu17_scripts() {
 	// Setup menu17ScreenReaderText for 2017 navigation to work
 	wp_localize_script('menu17-navigation', 'menu17ScreenReaderText' , array(
 		'expand'			=> __('Expand child menu', 'menu17'),
-		'collapse'		=> __('Collapse child menu', 'menu17')
+		'collapse'		=> __('Collapse child menu', 'menu17'),
+		'icon'				=> menu17_get_svg(array('icon' => 'angle-down', 'fallback' => true))
 	));
 
 	// Skip Link Focus
